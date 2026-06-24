@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace 'com.example.d424capstone'
+    namespace 'com.example.d308vacationplanner'
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.d424capstone"
+        applicationId "com.example.d308vacationplanner"
         minSdk 26
         targetSdk 36
         versionCode 1
@@ -40,4 +40,10 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.espresso.core
     androidTestImplementation libs.ext.junit
+
+    // Room components
+    implementation "androidx.room:room-runtime:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
+
 }

@@ -1,4 +1,4 @@
-package com.example.d424capstone;
+package com.example.d308vacationplanner;
 
 import org.junit.Test;
 

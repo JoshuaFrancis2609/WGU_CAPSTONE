@@ -1,4 +1,4 @@
-package com.example.d424capstone;
+package com.example.d308vacationplanner;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.d424capstone", appContext.getPackageName());
+        assertEquals("com.example.d308vacationplanner", appContext.getPackageName());
     }
 }
