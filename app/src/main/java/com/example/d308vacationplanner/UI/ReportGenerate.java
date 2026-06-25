@@ -82,11 +82,20 @@ public class ReportGenerate extends AppCompatActivity {
         List<Integer> matchingVacationIds = new ArrayList<>();
         String searchText = query == null ? "" : query.toLowerCase(Locale.ROOT).trim();
 
+        if (searchText.length() < 3) {
+            addMessageRow(vacationTable, "Please enter at least 3 characters.");
+            addMessageRow(excursionTable, "No excursions to display");
+            return;
+        }
+
         for (Vacation vacation : repository.getAllVacations()) {
             String vacationTitle = vacation.getVacationTitle() == null ? "" :
                     vacation.getVacationTitle().toLowerCase(Locale.ROOT);
 
-            if (!searchText.isEmpty() && vacationTitle.contains(searchText)) {
+            String vacationHotel = vacation.getVacationHotel() == null ? "":
+                    vacation.getVacationHotel().toLowerCase(Locale.ROOT);
+
+            if (!searchText.isEmpty() && (vacationTitle.contains(searchText) || vacationHotel.contains(searchText))) {
                 matchingVacationIds.add(vacation.getVacationID());
                 addVacationRow(vacation);
             }

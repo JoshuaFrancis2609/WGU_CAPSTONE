@@ -23,6 +23,11 @@
             android:exported="true"></receiver>
 
         <activity
+            android:name=".UI.ReportGenerate"
+            android:exported="false"
+            android:label="Report Generator"
+            android:parentActivityName=".UI.VacationList" />
+        <activity
             android:name=".UI.ExcursionDetails"
             android:exported="false"
             android:label="Excursion Details"
