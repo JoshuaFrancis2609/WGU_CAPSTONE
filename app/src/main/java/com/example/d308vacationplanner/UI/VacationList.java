@@ -204,6 +204,14 @@ public class VacationList extends AppCompatActivity {
             return true;
         }
 
+        //generate report button
+        if (id == R.id.generate_report) {
+            Intent intent = new Intent(VacationList.this, ReportGenerate.class);
+            startActivity(intent);
+
+            return true;
+        }
+
         //for back button
         if (id == android.R.id.home) {
             this.finish();
