@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.d308vacationplanner.R;
 import com.example.d308vacationplanner.database.Repository;
 import com.example.d308vacationplanner.entities.Excursion;
+import com.example.d308vacationplanner.entities.Vacation;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -64,6 +65,17 @@ public class ExcursionDetails  extends AppCompatActivity {
         //Excursion Id
         excursionId = getIntent().getIntExtra("excursionId", -1);
         vacationId = getIntent().getIntExtra("vacationId", -1);
+
+        //Retrieve the associated vacation dates for validating excursion dates when
+        //changing already existing excursion dates.
+        if (vacationId != -1) {
+            Vacation vacation = repository.getVacationById(vacationId);
+
+            if (vacation != null) {
+                vacationStartDate = vacation.getStartDate();
+                vacationEndDate = vacation.getEndDate();
+            }
+        }
 
         //Fixing back arrow bug that brings up blank vacation instead of the one the user was on
         if (getSupportActionBar() != null) {
@@ -278,8 +290,8 @@ public class ExcursionDetails  extends AppCompatActivity {
         String excursionDate = editExcursionDate.getText().toString();
 
         //Get vacation dates
-        String vacationStartDate = getIntent().getStringExtra("vacationStartDate");
-        String vacationEndDate = getIntent().getStringExtra("vacationEndDate");
+        String vacationStartDate = this.vacationStartDate;
+        String vacationEndDate = this.vacationEndDate;
 
         //Empty validation check
         if (excursionDate.isEmpty()) {

@@ -171,4 +171,21 @@ public class Repository {
         }
         return excursion[0];
     }
+
+    //Get Vacation by id
+    public Vacation getVacationById(int vacationId) {
+        final Vacation[] vacation = new Vacation[1];
+
+        databaseWriteExecutor.execute(() -> {
+            vacation[0] = mVacationDAO.getVacationById(vacationId);
+        });
+
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return vacation[0];
+    }
 }
