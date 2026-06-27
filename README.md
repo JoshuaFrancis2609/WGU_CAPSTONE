@@ -206,6 +206,10 @@ Version:
 
 Vacation Planner v4.0
 
+Hosted Application Link:
+
+https://github.com/JoshuaFrancis2609/WGU_CAPSTONE/releases/tag/v4.0
+
 Panopto Video:
 
 https://wgu.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=13768d70-ec40-437b-beda-b4760111a115
