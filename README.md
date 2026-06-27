@@ -196,6 +196,7 @@ Future developers should:
 
 ## Repository:
 ### https://github.com/JoshuaFrancis2609/WGU_CAPSTONE
+### https://gitlab.com/wgu-gitlab-environment/student-repos/jfr1002/d424-software-engineering-capstone
 
 ## Branch:
 ### working_branch
